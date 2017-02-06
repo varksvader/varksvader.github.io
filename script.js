@@ -48,7 +48,7 @@ recognition.onresult = function(event) {
 
 recognition.onspeechend = function() {
   recognition.stop();
-  document.getElementById('myImage').src = "images/MicrophoneOff.png";
+  document.getElementById('myImage').src = 'images/MicrophoneOff.png';
 }
 
 
@@ -61,13 +61,13 @@ recognition.onerror = function(event) {
 }
 
 function changeImage() {
-    if (image.src.match("Off")) {
-    	image.src = "images/MicrophoneListening.png";
-		recognition.lang = dropdown.data-val;
+    if (image.src.match('Off')) {
+    	image.src = 'images/MicrophoneListening.png';
+		recognition.lang = dropdown.getAttribute('data-val');
         recognition.start();
         console.log('Ready to receive a voice command.');
     } else {
     	recognition.stop();
-        image.src = "images/MicrophoneOff.png";
+        image.src = 'images/MicrophoneOff.png';
     }
 }
