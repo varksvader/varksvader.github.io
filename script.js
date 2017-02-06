@@ -63,6 +63,7 @@ recognition.onerror = function(event) {
 function changeImage() {
     if (image.src.match("Off")) {
     	image.src = "images/MicrophoneListening.png";
+		recognition.lang = dropdown.data-val;
         recognition.start();
         console.log('Ready to receive a voice command.');
     } else {
